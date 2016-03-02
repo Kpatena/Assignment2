@@ -1,0 +1,23 @@
+﻿@model DiplomaDataModel.CourseOption.Choice
+
+@{
+    ViewBag.Title = "Edit Choice";
+}
+<p class="choice_error">@ViewData["choice_error"]</p>
+@using (Html.BeginForm())
+{
+    <fieldset>
+        @Html.AntiForgeryToken()
+        <legend>@ViewBag.Title</legend>
+        @Html.EditorForModel()
+        <p><input type="submit" value="Save" /></p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
